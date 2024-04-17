@@ -1,0 +1,56 @@
+<!-- HelloPanel Component -->
+<mvc:View
+    controllerName="sap.ui.demo.walkthrough.controller.HelloPanel"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+
+    <Panel
+        headerText="{i18n>helloPanelTitle}"
+        class="sapUiResponsiveMargin"
+        width="auto">
+        <content>
+            <Button
+                id="helloDialogButton"
+                icon="sap-icon://world" 
+                text="{i18n>openDialogButtonText}"
+                press=".onOpenDialog"
+            />
+            <Button
+                text="{i18n>showHelloButtonText}"
+                press=".onShowHello"
+                class="myCustomButton"
+            />
+            <Input 
+                value="{/recipient/name}"
+                description="Hello {/recipient/name}"
+                valueLiveUpdate="true"
+                width="60%"
+            />
+            <FormattedText
+                htmlText= " Hello {/recipient/name}"
+                class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"
+            />
+    </content>
+    </Panel>
+
+    <!-- Square Tiles -->
+    <GenericTile
+        class="tileMargin"
+        header="LOGS"
+        press="onTilePress"
+        frameType="OneByOne"
+        mode="ContentMode">
+        <tileContent>
+            <TileContent>
+                <!-- footer="Updated now">-->
+                <content>
+                    <NumericContent
+                        scale="LOGS"
+                        value="4"
+                        valueColor="Good"/>
+                </content>
+            </TileContent>
+            </tileContent>
+    </GenericTile>
+
+</mvc:View>
